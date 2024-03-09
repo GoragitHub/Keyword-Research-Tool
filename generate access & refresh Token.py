@@ -1,50 +1,5 @@
 # """Generates refresh token for AdWords using the Installed Application flow."""
 
-
-# import sys
-
-# from oauth2client import client
-
-# # Your OAuth 2.0 Client ID and Secret. If you do not have an ID and Secret yet,
-# # please go to https://console.developers.google.com and create a set.
-# CLIENT_ID = "183703088840-7f626kihkqrsg4h5vgbov20pkef1v5qf.apps.googleusercontent.com"
-# CLIENT_SECRET = "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"
-
-# # The AdWords API OAuth 2.0 scope.
-# SCOPE = u'https://www.googleapis.com/auth/adwords'
-
-
-# def main():
-#   """Retrieve and display the access and refresh token."""
-#   flow = client.OAuth2WebServerFlow(
-#       client_id=CLIENT_ID,
-#       client_secret=CLIENT_SECRET,
-#       scope=[SCOPE],
-#       user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-#       redirect_uri='http://localhost')
-
-#   authorize_url = flow.step1_get_authorize_url()
-
-#   print('Log into the Google Account you use to access your AdWords account'
-#         'and go to the following URL: \n{}\n'.format(authorize_url))
-#   print('After approving the token enter the verification code (if specified).')
-#   code = input('Code: ').strip()
-
-#   try:
-#     credential = flow.step2_exchange(code)
-#   except client.FlowExchangeError as e:
-#     print('Authentication has failed: {}'.format(e))
-#     sys.exit(1)
-#   else:
-#     print('OAuth 2.0 authorization successful!\n\n'
-#           'Your access token is:\n {}\n\nYour refresh token is:\n {}'.format(
-#           credential.access_token, credential.refresh_token))
-
-
-# if __name__ == '__main__':
-#   main()
-
-
 import argparse
 import sys
 from google_auth_oauthlib.flow import InstalledAppFlow
